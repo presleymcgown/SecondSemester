@@ -151,48 +151,117 @@ public class BinarySearch {
 
     }
 
-    public static int q3(short[] arr, short target, int left, int right){
+    public static int q3(short[] arr, short target){
 
-        if(left > right){
+        int left = 0;
+        int right = arr.length - 1;
 
-            return -1;
-
-        } else {
+        while (left <= right){
 
             int mid = (left + right) / 2;
 
-            if (mid == target) {
+            if(arr[mid] == target){
 
                 if(arr[mid + 1] == target){
 
+                    int middle = mid;
+
+                    for (int i = 1; i < arr.length; i++) {
+
+                        if(arr[middle + i] == target){
+
+                            mid += 1;
+
+                        }else{
+
+                            break;
+
+                        }
+
+                    }
 
                 }
 
+                System.out.println(mid);
                 return mid;
-
             }
 
             if(arr[mid] > target){
 
-                //left half
-
-                q3(arr, target, left, mid - 1);
+                right = mid - 1;
 
             }
 
             if(arr[mid] < target){
 
-                //right half
+                left = mid + 1;
 
-                q3(arr, target, mid + 1, right);
+            }
+
+        }
+
+        System.out.println(-1);
+        return -1;
+    }
+
+    public static int q4(String[] arr, String target){
+
+
+        int left = 0;
+        int right = arr.length - 1;
+
+        while (left <= right){
+
+            int mid = (left + right) / 2;
+
+            if(arr[mid].equals(target)){
+
+                int first = mid;
+
+                int middle = mid;
+
+                if(arr[mid + 1].equals(target)){
+
+
+                    for (int i = 1; i < arr.length; i++) {
+
+                        if(arr[middle + i].equals(target)){
+
+                            mid += 1;
+
+                        }else{
+
+                            break;
+
+                        }
+
+                    }
+
+                }
+
+                System.out.println(mid - first);
+                return mid;
+            }
+
+
+           if(arr[mid].compareTo(target) < 0){
+
+             right = mid - 1;
+
+            }
+
+            if(arr[mid].compareTo(target) > 0){
+
+                left = mid + 1;
 
             }
 
         }
 
 
-
+        System.out.println(-1);
         return -1;
 
     }
+
 }

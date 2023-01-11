@@ -20,7 +20,11 @@ public class Main {
         short[] dates = {1492, 1776, 1803, 1861, 1861, 1861, 1945};
         short target3 = 1861;
 
-        BinarySearch.q3(dates, target3, 0, dates.length - 1);
+        BinarySearch.q3(dates, target3);
+
+        String[] patientNames = {"Brown", "Johnson", "Johnson", "Johnson", "Johnson", "Jones", "Smith", "Williams"};
+        String target4 = "Johnson";
+        BinarySearch.q4(patientNames, target4);
 
     }
 
