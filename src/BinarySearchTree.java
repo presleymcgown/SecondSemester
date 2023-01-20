@@ -168,23 +168,23 @@ public class BinarySearchTree<T extends Comparable<T>> implements Tree<T> {
 
             return false;
 
-        }
-
-        if(target == root.data){
+        } else if(target == root.data){
 
             return true;
 
-        }
+        } else {
 
-        if(target.compareTo(root.data) < 0){
+            if(target.compareTo(root.data) < 0){
 
-            root = root.left;
-            BTSContains(root, target);
+                root = root.left;
+                BTSContains(root, target);
 
-        }else{
+            }else{
 
-            root = root.right;
-            BTSContains(root, target);
+                root = root.right;
+                BTSContains(root, target);
+
+            }
 
         }
 

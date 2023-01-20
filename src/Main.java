@@ -7,17 +7,15 @@ public class Main {
 
     public static void main(String[] args) {
 
-        BinarySearchTree<Integer> tree = new BinarySearchTree<>();
+        int[] arr = {3,2,1,5,4};
 
-        tree.insert(5);
-        tree.insert(1);
-        tree.insert(10);
+        IterativeSorting.bubbleSort(arr);
 
-        System.out.println(tree.contains(8));
-        System.out.println(tree.contains(5));
-        System.out.println(tree.contains(1));
-        System.out.println(tree.contains(10));
+        for (int i = 0; i < arr.length; i++) {
 
+            
+
+        }
 
     }
 
