@@ -9,11 +9,11 @@ public class Main {
 
         int[] arr = {3,2,1,5,4};
 
-        IterativeSorting.bubbleSort(arr);
+        IterativeSorting.insertionSort(arr);
 
         for (int i = 0; i < arr.length; i++) {
 
-            
+            System.out.println(arr[i]);
 
         }
 
