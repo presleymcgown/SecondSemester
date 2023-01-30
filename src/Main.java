@@ -9,7 +9,7 @@ public class Main {
 
         int[] arr = {3,2,1,5,4};
 
-        IterativeSorting.insertionSort(arr);
+        RecursiveSorting.heapSort(arr);
 
         for (int i = 0; i < arr.length; i++) {
 
