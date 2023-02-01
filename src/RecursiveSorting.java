@@ -130,7 +130,7 @@ public class RecursiveSorting {
             arr[0] = root;
 
                 heapify(arr, size, 0);
-                
+
         }
 
 
@@ -158,6 +158,60 @@ public class RecursiveSorting {
 
             heapify(arr, size, lgIndex);
 
+            printArr(arr);
+
+
+    }
+
+    public static void quickSort(int[] arr, int firstInd, int lastInd){
+
+        if(firstInd < lastInd){
+
+            int p = partition(arr, firstInd, lastInd);
+
+            quickSort(arr, firstInd, p - 1);
+            quickSort(arr, p + 1, lastInd);
+
+        }
+
+    }
+
+    public static int partition(int[] arr, int firstInd, int lastInd){
+
+        int pivot = arr[lastInd];
+        int i = firstInd - 1;
+
+        for (int j = 0; j <= lastInd - 1; j++) {
+
+            if(j < pivot){
+
+                i++;
+
+                int swap = arr[i];
+                arr[i] = arr[j];
+                arr[j] = swap;
+
+            }
+
+        }
+
+        int swap = arr[i + 1];
+        arr[i + 1] = arr[lastInd];
+        arr[lastInd] = swap;
+
+        return i + 1;
+
+
+
+    }
+
+    public static void printArr(int[] arr){
+
+        for (int i = 0; i < arr.length; i++) {
+
+            System.out.println(arr[i]);
+
+        }
 
     }
 
